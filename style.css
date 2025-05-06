@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #ffe0b2, #f8bbd0);
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .header h1 {
+    font-size: 3em;
+    color: #e65100;
+  }
+  
+  .header p {
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  .juice-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .juice-card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 260px;
+    transition: transform 0.2s ease;
+  }
+  
+  .juice-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .juice-card h2 {
+    color: #d84315;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  .order-section {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .order-section button {
+    background-color: #ff9800;
+    color: white;
+    font-size: 1em;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .order-section button:hover {
+    background-color: #fb8c00;
+  }
