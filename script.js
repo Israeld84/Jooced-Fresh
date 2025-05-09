@@ -28,5 +28,5 @@ const juices = [
   
   // Button click handler
   function orderNow() {
-    alert('Thanks for choosing Jooced! Your order is being prepared. 🍹');
+    alert('Thanks for choosing Jooced Fresh! Your order is being prepared. 🍹');
   }
