@@ -1,31 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Jooced - Fresh Juices</title>
-      <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-      <header class="header">
-        <h1>Jooced</h1>
-        <p>Organic, Cold-Pressed Juices</p>
-      </header>
-    
-      <main class="juice-container">
-    
-      </main>
-    
-      <div class="order-section">
-        <button onclick="orderNow()">Order Now</button>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jooced | Fresh Juice Delivered</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Jooced</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#order">Order</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero" id="home">
+      <h1>Freshly Squeezed, Delivered to You</h1>
+      <p>Order your favorite juices online with Jooced.</p>
+      <a href="#order" class="btn-primary">Order Now</a>
+    </div>
+  </header>
+
+  <section class="menu" id="menu">
+    <h2>Our Juices</h2>
+    <div class="juice-grid">
+      <div class="juice-card">
+        <img src="https://via.placeholder.com/200x150" alt="Tropical Blast" />
+        <h3>Charcoal Lemonade</h3>
+        <p>Lemon, Charcoal, Maple, Coco Water.</p>
       </div>
-    
-      <script src="script.js"></script>
-    </body>
-    </html>
-    
+      <div class="juice-card">
+        <img src="https://via.placeholder.com/200x150" alt="Green Detox" />
+        <h3>Bloom</h3>
+        <p>Celery, Pear, Lemon, Pea Flower.</p>
+      </div>
+      <div class="juice-card">
+        <img src="https://via.placeholder.com/200x150" alt="Berry Boost" />
+        <h3>Watermelon Sunrise</h3>
+        <p>Lime, Watermelon, Strawberry, Beets, Pink Salt.</p>
+      </div>
+      <div class="juice-card">
+        <img src="https://via.placeholder.com/200x150" alt="Sweet Blue" />
+        <h3>Sweet Blue</h3>
+        <p>Pineapple, Gala, Lemon, Lime, Blue Spirulina, Cucumber.</p>
+      </div>
+      <div class="juice-card">
+        <img src="https://via.placeholder.com/200x150" alt="Zinger" />
+        <h3>Zinger</h3>
+        <p>Gala, Lemon, Ginger.</p>
+      </div>
+      <div class="juice-card">
+        <img src="https://via.placeholder.com/200x150" alt="Glow" />
+        <h3>Glow</h3>
+        <p>Gala, Lemon, Kale, Cucumber.</p>
+      </div>
+      <div class="juice-card">
+        <img src="https://via.placeholder.com/200x150" alt="Hydrate" />
+        <h3>Hydrate</h3>
+        <p>Celery, Lemon, Kale.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="order" id="order">
+    <h2>Place Your Order</h2>
+    <form id="orderForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <select id="juice">
+        <option value="Tropical Blast">Tropical Blast</option>
+        <option value="Green Detox">Green Detox</option>
+        <option value="Berry Boost">Berry Boost</option>
+        <option value="Sweet Blue">Sweet Blue</option>
+        <option value="Zinger">Zinger</option>
+        <option value="Glow">Glow</option>
+        <option value="Hydrate">Hydrate</option>
+      </select>
+      <input type="number" id="quantity" placeholder="Quantity" min="1" value="1" required />
+      <button type="submit">Submit Order</button>
+    </form>
+    <div id="orderConfirmation"></div>
+  </section>
+
+   <footer id="contact">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h4>Contact Us</h4>
+        <p>Email: <a href="mailto:alyssa.israel1@gmail.com">hello@joocedfresh.com</a></p>
+        <p>Phone: (704) 819-4009</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#order">Order</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <p>
+          <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Jooced. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
