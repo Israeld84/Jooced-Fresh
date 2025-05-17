@@ -15,11 +15,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #FFA500;
+  color: black;
 }
 
 h1, h2, h3, h4 {
-  color: #FFA500;
+  color: black;
 }
 
 /* Navbar */
@@ -38,7 +38,7 @@ h1, h2, h3, h4 {
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #FFA500;
+  color: black;
 }
 
 .nav-links {
@@ -53,7 +53,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-links li a:hover {
-  color: #ff7b00;
+  color: black;
 }
 
 /* Hero Section */
@@ -183,7 +183,7 @@ form#orderForm input[type="email"] {
 }
 
 form#orderForm button {
-  background-color: #FFA500;
+  background-color: black;
   color: white;
   font-weight: bold;
   border: none;
@@ -196,7 +196,7 @@ form#orderForm button {
 }
 
 form#orderForm button:hover {
-  background-color: #ff7b00;
+  background-color: black;
 }
 
 #orderConfirmation {
@@ -234,7 +234,7 @@ footer {
 .footer-nav h4,
 .footer-social h4 {
   margin-bottom: 1rem;
-  color: #FFA500;
+  color: black;
 }
 
 .footer-nav ul {
@@ -248,7 +248,7 @@ footer {
 
 .footer-social a {
   margin-right: 10px;
-  color: #FFA500;
+  color: black;
 }
 
 .footer-bottom {
