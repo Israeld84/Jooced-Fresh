@@ -66,15 +66,30 @@
 
   <section class="order" id="order">
     <h2>Place Your Order</h2>
-  <div class="square-order-button">
-    <a href="https://square.link/u/YOUR_CHECKOUT_LINK" target="_blank" class="btn-primary">
-      Order Now via Square
-    </a>
-  </div>
-</section>
 
-    <div id="orderConfirmation"></div>
+    <form action="https://formsubmit.co/alyssa.israel1@gmail.com" method="POST" class="order-form">
+      <fieldset>
+        <legend>Select Your Juices (Choose up to 6)</legend>
+        <label><input type="checkbox" name="juices" value="Charcoal Lemonade"> Charcoal Lemonade</label><br>
+        <label><input type="checkbox" name="juices" value="Bloom"> Bloom</label><br>
+        <label><input type="checkbox" name="juices" value="Watermelon Sunrise"> Watermelon Sunrise</label><br>
+        <label><input type="checkbox" name="juices" value="Sweet Blue"> Sweet Blue</label><br>
+        <label><input type="checkbox" name="juices" value="Zinger"> Zinger</label><br>
+        <label><input type="checkbox" name="juices" value="Glow"> Glow</label><br>
+        <label><input type="checkbox" name="juices" value="Hydrate"> Hydrate</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Select Pack Size</legend>
+        <label><input type="radio" name="packSize" value="3-Pack" required> 3-Pack</label><br>
+        <label><input type="radio" name="packSize" value="6-Pack"> 6-Pack</label>
+      </fieldset>
+
+      <button type="submit" class="btn-primary">Place Order</button>
+    </form>
   </section>
+
+  <div id="orderConfirmation"></div>
 
   <footer id="contact">
     <div class="footer-container">
@@ -86,7 +101,7 @@
           <textarea name="message" placeholder="Your Message" required></textarea>
           <button type="submit">Send Message</button>
         </form>
-        <p>Email: <a href="mailto:alyssa.israel1@gmail.com">freshlyjooced@gmail.com.com</a></p>
+        <p>Email: <a href="mailto:alyssa.israel1@gmail.com">freshlyjooced@gmail.com</a></p>
         <p>Phone: (704) 819-4009</p>
       </div>
       <div class="footer-nav">
@@ -112,4 +127,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
