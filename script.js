@@ -14,24 +14,48 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   gsap.from("footer", { duration: 1.5, opacity: 0, y: 50, ease: "power1.out", delay: 0.5 });
 
-  // Handle form submission with animation
   orderForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
-    const juice = document.getElementById("juice").value;
-    const quantity = document.getElementById("quantity").value;
 
-    if (!name || !email || !juice || !quantity) {
-      confirmation.textContent = "Please complete all fields.";
+    if (!name || !email) {
+      confirmation.textContent = "Please complete all required fields.";
       confirmation.style.color = "red";
       gsap.fromTo(confirmation, { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "bounce.out" });
       return;
     }
 
+    // Collect selected juices and quantities
+    const juiceOptions = [...orderForm.querySelectorAll(".juice-option")];
+    const selectedJuices = [];
+
+    for (const option of juiceOptions) {
+      const checkbox = option.querySelector('input[type="checkbox"]');
+      const qtyInput = option.querySelector('input[type="number"]');
+      if (checkbox.checked) {
+        const qty = parseInt(qtyInput.value);
+        if (qty > 0) {
+          selectedJuices.push({ name: checkbox.value, quantity: qty });
+        }
+      }
+    }
+
+    if (selectedJuices.length === 0) {
+      confirmation.textContent = "Please select at least one juice and specify quantity.";
+      confirmation.style.color = "red";
+      gsap.fromTo(confirmation, { scale: 1.1 }, { scale: 1, duration: 0.3, ease: "bounce.out" });
+      return;
+    }
+
+    // Build order summary text
+    const orderSummary = selectedJuices
+      .map(j => `${j.quantity} x ${j.name}`)
+      .join(", ");
+
     confirmation.style.color = "#2f9e44";
-    confirmation.textContent = `Thanks ${name}, your order of ${quantity} ${juice} juice${quantity > 1 ? "s" : ""} has been received!`;
+    confirmation.textContent = `Thanks ${name}, your order of ${orderSummary} has been received!`;
 
     // Animate confirmation text
     gsap.fromTo(
@@ -40,10 +64,21 @@ document.addEventListener("DOMContentLoaded", function () {
       { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "elastic.out(1, 0.75)" }
     );
 
-    // Scroll to confirmation
     confirmation.scrollIntoView({ behavior: "smooth" });
 
-    // Reset form after animation
+    // After 2 seconds, redirect to Square site
+    setTimeout(() => {
+      const paymentUrl = "https://jooced.square.site";
+      // Optional: append order info as URL params (if useful)
+      const params = new URLSearchParams();
+      params.append("name", name);
+      params.append("email", email);
+      params.append("order", orderSummary);
+
+      window.location.href = paymentUrl + "?" + params.toString();
+    }, 2000);
+
+    // Reset form immediately (optional)
     orderForm.reset();
   });
 });

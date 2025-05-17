@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jooced | Fresh Juice Delivered</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- GSAP CDN for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -67,29 +70,50 @@
   <section class="order" id="order">
     <h2>Place Your Order</h2>
 
-    <form action="https://formsubmit.co/alyssa.israel1@gmail.com" method="POST" class="order-form">
-      <fieldset>
-        <legend>Select Your Juices (Choose up to 6)</legend>
-        <label><input type="checkbox" name="juices" value="Charcoal Lemonade"> Charcoal Lemonade</label><br>
-        <label><input type="checkbox" name="juices" value="Bloom"> Bloom</label><br>
-        <label><input type="checkbox" name="juices" value="Watermelon Sunrise"> Watermelon Sunrise</label><br>
-        <label><input type="checkbox" name="juices" value="Sweet Blue"> Sweet Blue</label><br>
-        <label><input type="checkbox" name="juices" value="Zinger"> Zinger</label><br>
-        <label><input type="checkbox" name="juices" value="Glow"> Glow</label><br>
-        <label><input type="checkbox" name="juices" value="Hydrate"> Hydrate</label>
-      </fieldset>
+    <form id="orderForm">
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
 
-      <fieldset>
-        <legend>Select Pack Size</legend>
-        <label><input type="radio" name="packSize" value="3-Pack" required> 3-Pack</label><br>
-        <label><input type="radio" name="packSize" value="6-Pack"> 6-Pack</label>
-      </fieldset>
+      <div class="juice-option">
+        <label><input type="checkbox" value="Charcoal Lemonade" /> Charcoal Lemonade</label>
+        <input type="number" min="1" value="1" />
+      </div>
 
-      <button type="submit" class="btn-primary">Place Order</button>
+      <div class="juice-option">
+        <label><input type="checkbox" value="Bloom" /> Bloom</label>
+        <input type="number" min="1" value="1" />
+      </div>
+
+      <div class="juice-option">
+        <label><input type="checkbox" value="Watermelon Sunrise" /> Watermelon Sunrise</label>
+        <input type="number" min="1" value="1" />
+      </div>
+
+      <div class="juice-option">
+        <label><input type="checkbox" value="Sweet Blue" /> Sweet Blue</label>
+        <input type="number" min="1" value="1" />
+      </div>
+
+      <div class="juice-option">
+        <label><input type="checkbox" value="Zinger" /> Zinger</label>
+        <input type="number" min="1" value="1" />
+      </div>
+
+      <div class="juice-option">
+        <label><input type="checkbox" value="Glow" /> Glow</label>
+        <input type="number" min="1" value="1" />
+      </div>
+
+      <div class="juice-option">
+        <label><input type="checkbox" value="Hydrate" /> Hydrate</label>
+        <input type="number" min="1" value="1" />
+      </div>
+
+      <button type="submit" class="btn-primary">Submit Order</button>
     </form>
-  </section>
 
-  <div id="orderConfirmation"></div>
+    <div id="orderConfirmation"></div>
+  </section>
 
   <footer id="contact">
     <div class="footer-container">
@@ -101,7 +125,7 @@
           <textarea name="message" placeholder="Your Message" required></textarea>
           <button type="submit">Send Message</button>
         </form>
-        <p>Email: <a href="mailto:alyssa.israel1@gmail.com">freshlyjooced@gmail.com</a></p>
+        <p>Email: <a href="mailto:alyssa.israel1@gmail.com">freshlyjooced@gmail.com.com</a></p>
         <p>Phone: (704) 819-4009</p>
       </div>
       <div class="footer-nav">
@@ -115,7 +139,7 @@
       <div class="footer-social">
         <h4>Follow Us</h4>
         <p>
-          <a href="https://www.instagram.com/joocedfresh/" target="_blank" rel="noopener noreferrer">Instagram</a> 
+          <a href="https://www.instagram.com/joocedfresh/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </p>
       </div>
     </div>
@@ -123,7 +147,5 @@
       <p>&copy; 2025 Jooced. All rights reserved.</p>
     </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
